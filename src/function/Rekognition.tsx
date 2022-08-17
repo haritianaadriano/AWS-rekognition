@@ -4,7 +4,7 @@ import { Buffer } from "buffer";
 import React, { useEffect } from "react";
 
 const credentials = fromCognitoIdentityPool({
-                        idnetityPoolId: "eu-west-2:371cdf1c-657e-4e3f-a6a0-3cdcf905bfdc",
+                        identityPoolId: "eu-west-2:371cdf1c-657e-4e3f-a6a0-3cdcf905bfdc",
                         clientConfig: {region: "eu-west-2"},
                     });
 
