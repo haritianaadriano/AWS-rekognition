@@ -1,8 +1,8 @@
 import { DetectFacesCommand, RekognitionClient } from "@aws-sdk/client-rekognition";
+import {fromCognitoIdentityPool} from '@aws-sdk/credential-providers';
 import { Buffer } from "buffer";
 import React, { useEffect } from "react";
 
-const fromCognitoIdentityPool = require("@aws-sdk/credential-providers");
 const credentials = fromCognitoIdentityPool({
                         idnetityPoolId: "eu-west-2:371cdf1c-657e-4e3f-a6a0-3cdcf905bfdc",
                         clientConfig: {region: "eu-west-2"},
