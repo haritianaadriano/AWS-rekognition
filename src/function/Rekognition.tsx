@@ -20,18 +20,21 @@ const FaceRekognition: React.FC<Props> = (Props) => {
             facedetails();
         }
     }, [(Props.count && Props.img)]);
+
     const facedetails = async () => {
-        const client = new RekognitionClient({region: "eu-west-2", credentials, });
+        const client = new RekognitionClient({region: "eu-west-2", credentials });
         let imgToSend = Buffer.from(Props.img, "base64");
+
         const params = {
             Image: {
                 Bytes: imgToSend,
             },
             Attributes: ["ALL"],
         };
-        const deteFacesCommand = new DetectFacesCommand(params);
+
+        const detectFacesCommand = new DetectFacesCommand(params);
         try {
-            const data = await client.send(deteFacesCommand);
+            const data = await client.send(detectFacesCommand);
             Props.result(data);
             return data
         }catch (error){
@@ -39,7 +42,8 @@ const FaceRekognition: React.FC<Props> = (Props) => {
         }
     }
     return (
-        <div></div>
+        <div>
+        </div>
     )
 }
          

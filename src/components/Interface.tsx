@@ -30,7 +30,9 @@ const InterfaceUi: React.FC<Props> = (Props) => {
     <>
         <h1>Face Authentification</h1>
         <input type="file" multiple onChange={fileImported}/>
-        <img src={file ?.base64}/>
+        <div className="cadre">
+          <img className="image" src={file ?.base64}/>
+        </div>
     </>
    );
 }

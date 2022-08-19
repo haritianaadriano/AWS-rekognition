@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
-import Interface from './components/Interface';
+import Information from './components/Information';
+import InterfaceUi from './components/Interface';
 import FaceRekognition from './function/Rekognition';
 
 interface Img {
@@ -25,8 +26,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Interface data={data}/>
+        <InterfaceUi data={data}/>
         <FaceRekognition img={img} result={Result} count={count}/>
+        <Information result={result}/>
       </header>
     </div>
   );
